@@ -33,10 +33,11 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
+const int  MOD = 1e9 + 7;
 
-ll binPow (ll a, ll b) {
-    ll res = 1;
+int binPow (int a, int b) {
+    int res = 1;
     while (b > 0) {
         if (b & 1) res = res * a;
         a = a * a;
@@ -45,13 +46,13 @@ ll binPow (ll a, ll b) {
     return res;
 }
 
-ll modInverse(ll A, ll M) {
-    ll m0 = M;
-    ll y = 0, x = 1;
+int modInverse(int A, int M) {
+    int m0 = M;
+    int y = 0, x = 1;
     if (M == 1) return 0;
     while (A > 1) {
-        ll q = A / M;
-        ll t = M;
+        int q = A / M;
+        int t = M;
         M = A % M, A = t;
         t = y;
         y = x - q * y;
@@ -65,10 +66,10 @@ void solve () {
 
 }
 
-int main () {
+int32_t main () {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    ll _ = 1;
+    int _ = 1;
     cin >> _;
     while (_--)
         solve ();
